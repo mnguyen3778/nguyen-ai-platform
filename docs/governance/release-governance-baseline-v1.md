@@ -1,366 +1,490 @@
 # Release Governance Baseline v1
 
-## 1. Purpose and Scope
+## 1. Purpose
 
-Release Governance is the policy framework for determining release readiness
-and release approval across the Nguyen AI Platform.
+Release Governance Baseline v1 establishes the canonical governance policy for
+governance release authority, release prerequisites, release approval, release
+evidence, release coordination, release records, and release lifecycle across
+the Nguyen AI Platform.
 
-The purpose of Release Governance is to ensure that release decisions preserve
-approved architecture, approved governance, repository ownership,
-producer/consumer isolation, contract integrity, bounded responsibility,
-end-to-end lineage, fail-closed validation, deterministic behavior,
-explainability, immutable evidence, and human decision authority.
+Release Governance governs governance releases only.
 
-The scope of Release Governance includes policy for release governance
-authority, release governance principles, release readiness, required
-governance reviews before release, release approval, release evidence, release
-decision categories, release governance stop conditions, document ownership,
-and lifecycle.
+It does not authorize:
 
-Release Governance Baseline v1 shall establish deterministic, evidence-based
-release governance without defining deployment, implementation, or operational
-procedure.
+- architecture redesign
+- repository ownership changes
+- implementation
+- deployment
+- runtime operations
+- production readiness
+- operational workflow
 
-This document defines governance policy only. It does not define CI/CD
-pipelines, deployment procedures, Git workflows, branching strategies,
-automation tooling, runtime deployment, infrastructure, security architecture,
-testing implementation, release scripts, build systems, APIs, schemas,
-roadmaps, production code, or production implementation.
+This document is governance only. It does not define CI/CD pipelines,
+deployment procedures, build systems, infrastructure, runtime operations,
+environment management, testing implementation, APIs, schemas, algorithms,
+production code, security implementation, operational workflow, or
+implementation mechanics.
 
-## 2. Governance Relationship
+## 2. Scope
 
-Release Governance derives authority from Platform Governance Baseline v1.
+Release Governance applies to governance release decisions for approved
+architecture and governance baselines in the Nguyen AI Platform.
 
-Release Governance requires repository compliance under Repository Governance
-Baseline v1.
+In scope:
 
-Release Governance requires contract compliance under Contract Governance
-Baseline v1 when release scope includes contract boundaries.
+- governance release authority
+- governance release prerequisites
+- governance release approval
+- governance release evidence
+- governance release coordination
+- governance release records
+- governance release lifecycle
+- governance release stop conditions
 
-Release Governance requires conformance decisions under Architecture
-Conformance Baseline v1.
+Out of scope:
 
-Release Governance evaluates release readiness against approved architecture
-baselines, including:
+- CI/CD pipelines
+- deployment procedures
+- build systems
+- infrastructure
+- runtime operations
+- environment management
+- testing implementation
+- APIs
+- schemas
+- algorithms
+- production code
+- security implementation
+- operational workflow
+- architecture redesign
+- repository ownership changes
+- implementation authorization
+- production readiness
 
-- `docs/platform/platform-architecture-v1.md`
-- `docs/platform/repository-ownership-v1.md`
-- `docs/platform/platform-integration-baseline-v1.md`
-- `docs/platform/system-context-baseline-v1.md`
+## 3. Governance Authority
 
-Release Governance must remain consistent with approved governance baselines,
-including:
+The `nguyen-ai-platform` repository is the governing authority for Release
+Governance Baseline v1.
 
-- `docs/governance/platform-governance-baseline-v1.md`
-- `docs/governance/repository-governance-baseline-v1.md`
-- `docs/governance/contract-governance-baseline-v1.md`
-- `docs/governance/architecture-conformance-baseline-v1.md`
+This authority is limited to governance policy for release readiness,
+governance release approval, governance release evidence, governance release
+coordination, governance release records, and governance release lifecycle.
 
-Release Governance does not supersede, redefine, or replace approved
-architecture, repository ownership, contract governance, architecture
-conformance, or implementation authorization.
-
-## 3. Release Governance Authority
-
-`nguyen-ai-platform` is the governing authority for release governance across
-the Nguyen AI Platform ecosystem.
-
-The platform repository owns release governance policy, release readiness
-review expectations, release decision categories, release governance stop
-conditions, and Release Governance Baseline document ownership.
+Release Governance derives from approved architecture and governance baselines.
+It does not supersede, redefine, or modify those baselines.
 
 Human decision authority is required for release approval, release rejection,
-release readiness interpretation, release governance supersession, and
-resolution of release governance stop conditions.
+release deferral, release supersession, and release governance policy
+supersession.
 
-Release governance authority is bounded by approved architecture and approved
-governance. It may evaluate release readiness and release approval, but it must
-not define deployment procedures, operational procedures, runtime deployment,
-automation tooling, build systems, release scripts, or production
-implementation.
+Release governance authority must not authorize implementation, deployment,
+runtime behavior, production operation, or architecture redesign.
 
-Repository release autonomy is preserved within approved architecture,
-governance, conformance, and release readiness boundaries. Repository autonomy
-does not authorize release scope expansion, ownership violations, conformance
-bypass, or release approval without human decision authority.
+## 4. Release Governance Philosophy
 
-## 4. Release Governance Principles
+Release Governance is based on the following philosophy:
 
-The following immutable principles govern release governance:
+- Approved baselines are released only after successful governance review.
+- Governance releases preserve architectural integrity.
+- Governance releases preserve traceability.
+- Governance releases preserve auditability.
+- Release decisions are evidence-based.
+- Release authority does not authorize implementation.
+- Unknown or insufficient release evidence fails closed.
+- Human decision authority remains required.
 
-- Release governance is evidence-based.
-- Release governance is deterministic.
-- Release governance preserves approved architecture.
-- Release governance preserves approved governance.
-- Release governance preserves repository ownership.
-- Release governance preserves producer/consumer isolation.
-- Release governance preserves contract integrity.
-- Release governance preserves bounded responsibility.
-- Release governance never replaces explicit human approval.
-- Release governance preserves immutable evidence.
-- Release governance preserves deterministic behavior.
-- Release governance preserves end-to-end lineage.
-- Release governance preserves fail-closed validation.
-- Release governance preserves versioned contracts.
-- Release governance preserves explainability.
+Governance release decisions protect the integrity of approved architecture and
+governance. They do not establish production readiness, deployment approval,
+operational readiness, or implementation authorization.
 
-## 5. Release Governance Scope
+## 5. Release Independence
 
-Release governance applies to release readiness and release approval decisions
-for work within the Nguyen AI Platform ecosystem.
+Governance release decisions rely only on approved governance evidence.
 
-Release governance evaluates whether a release candidate is aligned with:
+Governance release decisions rely only on approved architecture baselines.
 
-- approved architecture baselines
-- approved governance baselines
-- approved repository ownership
-- approved producer and consumer boundaries
-- approved contract boundaries
-- approved architecture conformance decisions
-- approved bounded responsibility
-- explicit human approval
+Delivery pressure shall not influence governance release decisions.
 
-Release governance does not evaluate deployment mechanics, runtime operations,
-infrastructure readiness, security controls, testing implementation, CI/CD
-pipelines, Git workflows, branching strategies, automation tooling, release
-scripts, build systems, APIs, schemas, or production implementation.
+Schedule pressure shall not influence governance release decisions.
 
-## 6. Release Readiness Policy
+Cost pressure shall not influence governance release decisions.
 
-Release readiness requires evidence that the release candidate remains aligned
-with approved architecture and governance.
+Operational urgency shall not influence governance release decisions.
 
-Release decisions must be based only on:
+Organizational preference shall not influence governance release decisions.
 
-- approved architecture baselines
-- approved governance baselines
-- approved conformance evidence
-- explicit human approval
+Unknown release readiness shall fail closed.
 
-Release readiness must preserve:
+Release independence preserves deterministic governance release decisions and
+prevents unsupported interpretation from replacing approved governance
+evidence.
 
-- producer/consumer isolation
+## 6. Relationship to Existing Approved Baselines
+
+This document derives from the approved Phase I Platform Architecture
+Foundation and the approved Phase II governance baselines.
+
+Approved Phase I baselines:
+
+- Platform Repository Foundation v1.
+- Platform Architecture Baseline v1.
+- Repository Ownership Baseline v1.
+- Platform Integration Baseline v1.
+- System Context Baseline v1.
+- Foundation Baseline Review v1.
+
+Approved Phase II baselines:
+
+- Platform Governance Baseline v1.
+- Cross-Repository Contract Governance Baseline v1.
+- Repository Governance Baseline v1.
+- Architecture Conformance Governance Baseline v1.
+
+Release Governance preserves the following relationships:
+
+- Platform Governance defines governance authority.
+- Platform Architecture defines approved architecture.
+- Repository Ownership defines immutable ownership.
+- Platform Integration defines approved integration boundaries.
+- Cross-Repository Contract Governance defines contract governance.
+- Repository Governance defines repository governance.
+- Architecture Conformance Governance defines evidence-based conformance.
+- Release Governance defines governance release readiness only.
+
+This document does not supersede, redefine, or modify any approved baseline. If
+there is a conflict between this document and an approved architecture or
+governance baseline, the approved baseline remains authoritative until changed
+through approved governance.
+
+## 7. Release Governance Principles
+
+Release Governance preserves:
+
+- producer and consumer isolation
+- repository ownership
+- repository autonomy
 - immutable evidence
 - deterministic behavior
 - end-to-end lineage
 - fail-closed validation
-- versioned contracts
+- versioned contract boundaries
 - explainability
-- repository ownership
 - human decision authority
-- bounded responsibility
 
-Release readiness must not be inferred from undocumented operational state,
-unsupported interpretation, assumed implementation behavior, or release labels
-that imply readiness beyond the approved scope.
+Release Governance also preserves:
 
-## 7. Required Governance Reviews Before Release
+- the Assessment Service is the sole producer of assessment truth
+- the Executive Intelligence Platform is the sole producer of executive
+  intelligence
+- the Website consumes Website Projection Delivery Contracts only
+- the Platform repository owns architecture and governance only
 
-Release readiness requires completion of applicable governance reviews before
-release approval.
+Release Governance shall evaluate release readiness without redefining these
+principles.
 
-Required reviews include:
+## 8. Release Identity
 
-- Architecture Review
-- Repository Governance Review
-- Contract Governance Review when contract boundaries are involved
-- Architecture Conformance Review
-- Release Readiness Review
-- release governance stop-condition assessment
-- explicit human approval
+Every approved governance release possesses a persistent release identity.
 
-Architecture Review confirms alignment with approved architecture baselines.
+Release identity is independent of implementation.
 
-Repository Governance Review confirms preservation of approved repository
-ownership and repository boundaries.
+Release identity preserves traceability to the approved governance baseline.
 
-Contract Governance Review confirms preservation of contract ownership,
-versioned boundaries, compatibility expectations, and fail-closed behavior when
-contract boundaries are involved.
+Release identity preserves traceability to governance release records.
 
-Architecture Conformance Review confirms that the release candidate is
-conformant with approved architecture and governance baselines.
+Release identity must not imply production readiness, deployment approval,
+operational readiness, or implementation authorization.
 
-Release Readiness Review confirms that the release candidate has the approved
-scope, approved evidence, completed governance reviews, and explicit human
-approval required for release.
+## 9. Release Authority
 
-## 8. Release Approval Policy
+The `nguyen-ai-platform` repository owns governance release authority.
 
-Release approval is a governance decision made under human decision authority.
+Release authority evaluates governance release readiness.
 
-Release approval requires:
+Release authority confirms prerequisite reviews.
 
-- approved release scope
-- approved bounded responsibility
-- completed required governance reviews
-- conformant architecture conformance decision
-- approved contract conformance status when contract boundaries are involved
-- no release governance stop conditions
-- explicit human approval
+Release authority confirms evidence sufficiency.
 
-Release approval must not override evidence-backed outputs, approved
-architecture, repository ownership, contract boundaries, fail-closed
-validation, lineage, explainability, or human decision authority.
+Release authority confirms conformance status.
 
-Release approval does not define deployment, runtime readiness, infrastructure
-readiness, operational readiness, implementation quality, testing
-implementation, or production implementation.
+Release authority requires explicit human approval.
 
-Release labeling must not imply readiness beyond the approved release scope.
+Release authority shall not:
 
-## 9. Release Evidence Requirements
+- authorize implementation
+- authorize deployment
+- authorize runtime behavior
+- authorize production operation
+- supersede approved governance baselines
 
-Release governance requires approved evidence sufficient to support a
-deterministic release decision.
-
-Release evidence may include policy-level references to:
-
-- governing architecture baselines
-- governing governance baselines
-- release scope statement
-- owning repository identification
-- bounded responsibility statement
-- completed governance review references
-- architecture conformance decision
-- contract conformance status when applicable
-- stop-condition assessment
-- human approval status
-
-Release Governance evaluates only approved governance evidence. Unsupported
-interpretation, assumptions, inferred implementation behavior, or undocumented
-operational state shall not be considered evidence for release approval.
-
-Release evidence must be traceable to approved architecture, approved
-governance, approved conformance evidence, approved review artifacts, and
-explicit human approval.
-
-Release evidence requirements are policy-level only. They do not define
-technical checklists, CI/CD rules, test plans, tooling rules, deployment
-procedures, release scripts, build systems, runtime checks, or implementation
-procedures.
-
-## 10. Release Decision Categories
-
-Release governance decisions must use one of the following policy-level
-categories:
-
-### `APPROVED FOR RELEASE`
-
-The release candidate is aligned with approved architecture and governance,
-required reviews are complete, no release governance stop condition is present,
-and explicit human approval has been provided.
-
-### `APPROVED WITH RECOMMENDATIONS`
-
-The release candidate is aligned with approved architecture and governance,
-required reviews are complete, no release governance stop condition is present,
-and explicit human approval has been provided. Non-blocking recommendations may
-be identified, but they must not be required to preserve release readiness.
-
-### `NOT APPROVED FOR RELEASE`
-
-The release candidate lacks required evidence, lacks required review
-completion, lacks explicit human approval, or has an active release governance
-stop condition.
-
-### `REQUIRES ARCHITECTURAL REVIEW`
-
-The release candidate reveals a genuine architectural gap, ambiguity, or
-proposed architectural change that cannot be resolved through existing approved
+Release authority must remain bounded by approved architecture and governance
 baselines.
 
-### `REQUIRES GOVERNANCE CORRECTION`
+## 10. Release Responsibilities
 
-The release candidate reveals a governance inconsistency, missing governance
-evidence, incomplete governance review, or governance stop condition that must
-be corrected before release approval.
+Release Governance is responsible for:
 
-## 11. Release Governance Stop Conditions
+- identifying release scope
+- identifying applicable baselines
+- confirming prerequisite reviews
+- confirming architecture conformance
+- confirming repository ownership preservation
+- confirming contract governance alignment where applicable
+- confirming release evidence sufficiency
+- documenting release decisions
+- preserving release traceability
+- preserving governance auditability
 
-Release governance shall prohibit release when any of the following conditions
-are present:
+Release responsibilities are governance responsibilities only. They do not
+authorize implementation, deployment, operational workflow, runtime behavior, or
+production readiness.
+
+## 11. Release Prerequisites
+
+Governance release prerequisites require:
+
+- approved bounded responsibility
+- completed governance review
+- completed repository ownership review
+- completed architecture conformance review
+- required contract governance alignment
+- no active governance stop conditions
+- sufficient approved release evidence
+- explicit human approval
+
+Release prerequisites must be satisfied using approved governance evidence and
+approved architecture baselines only.
+
+## 12. Release Approval Policy
+
+Release approval policy defines governance decisions only.
+
+Allowed release decisions are:
+
+- APPROVED
+- APPROVED WITH RECOMMENDATIONS
+- DEFERRED
+- REJECTED
+
+Release approval shall never imply:
+
+- production readiness
+- deployment approval
+- operational readiness
+- implementation authorization
+
+Release approval requires sufficient approved evidence, completed prerequisite
+reviews, established architecture conformance, absence of stop conditions, and
+explicit human approval.
+
+## 13. Release Evidence Requirements
+
+Release Governance permits only the following release evidence:
+
+- approved governance baselines
+- approved architecture baselines
+- approved repository ownership baselines
+- approved integration baselines
+- approved review records
+- approved architecture conformance records
+- approved governance release records
+
+Excluded evidence includes:
+
+- unsupported interpretation
+- assumptions
+- inferred implementation behavior
+- undocumented operational state
+- runtime observations without governance context
+- delivery pressure
+- schedule pressure
+- cost pressure
+
+Unknown or insufficient release evidence shall fail closed.
+
+Release evidence requirements are governance policy only. They do not define
+evidence collection tooling, CI/CD workflow, deployment workflow, operational
+workflow, testing implementation, runtime checks, or implementation procedure.
+
+## 14. Release Coordination Policy
+
+Release Coordination governs only:
+
+- release scope
+- applicable baselines
+- required reviews
+- conformance status
+- ownership preservation
+- contract governance alignment
+- release decision records
+
+Release Coordination shall not:
+
+- define CI/CD workflow
+- define deployment workflow
+- define implementation sequence
+- define operational workflow
+- permit partial governance adoption that creates inconsistent governance
+  authority across approved baselines
+
+Release coordination must preserve traceability, auditability, governance
+authority, repository ownership, and human decision authority.
+
+## 15. Release Records
+
+Release records must preserve:
+
+- release identifier
+- release scope
+- applicable governance baselines
+- applicable architecture baselines
+- reviewed evidence
+- required reviews
+- conformance status
+- release decision
+- human approval
+- governance authority
+- traceability to superseded governance releases where applicable
+
+Release records must be explainable, reviewable, auditable, and traceable to
+approved governance and architecture evidence.
+
+Release records must not redefine architecture, repository ownership, contract
+governance, implementation responsibility, deployment approval, runtime
+behavior, or production readiness.
+
+## 16. Release Lifecycle
+
+Release Governance defines policy only for the governance release lifecycle.
+
+Release initiation:
+
+A governance release begins when an approved bounded governance responsibility
+is ready for release evaluation.
+
+Baseline identification:
+
+The applicable approved architecture and governance baselines must be
+identified before release evaluation.
+
+Prerequisite review:
+
+Required release prerequisites must be confirmed before release approval.
+
+Evidence review:
+
+Release evidence must be reviewed against the evidence requirements of this
+baseline.
+
+Conformance confirmation:
+
+Architecture conformance must be established before release approval.
+
+Release decision:
+
+The release decision must use one of the approved release decision categories.
+
+Release record creation:
+
+The release decision must be documented in a governed release record.
+
+Release approval:
+
+Release approval requires explicit human approval.
+
+Release deferral:
+
+Release may be deferred when required evidence, required reviews, conformance,
+or approval is incomplete.
+
+Release rejection:
+
+Release may be rejected when a stop condition is present or when release
+readiness cannot be established.
+
+Release closure:
+
+Release may close only after the release decision is documented and any stop
+condition has been resolved or escalated through approved governance.
+
+Release supersession:
+
+Release records may be superseded only through approved governance and must
+preserve traceability to the prior release record.
+
+This lifecycle does not define CI/CD workflow, deployment workflow,
+implementation workflow, operational workflow, runtime behavior, or production
+readiness.
+
+## 17. Governance Review Requirements
+
+Release Governance requires review of:
+
+- applicable approved baselines
+- release scope
+- repository ownership
+- repository autonomy
+- producer and consumer isolation
+- contract boundaries where applicable
+- architecture conformance
+- evidence sufficiency
+- decision explainability
+- human approval
+- stop-condition absence
+
+Governance review must confirm that Release Governance remains within its
+bounded responsibility of governing release readiness for governance releases
+only.
+
+Governance review must not redefine architecture, redefine repository
+ownership, redefine contract governance, authorize implementation, authorize
+deployment, authorize runtime behavior, or imply production readiness.
+
+## 18. Stop Conditions
+
+Release Governance prohibits progression whenever:
 
 - approved architecture is violated
-- approved governance is violated
 - repository ownership is violated
-- architecture conformance is missing
-- architecture conformance is non-conformant
-- required governance reviews are incomplete
-- contract boundaries are invalid, incompatible, unapproved, bypassed,
-  unknown, or unversioned
-- producer/consumer isolation is weakened
+- repository autonomy exceeds approved boundaries
+- assessment truth is produced or modified outside the Assessment Service
+- executive intelligence is generated outside the Executive Intelligence
+  Platform
+- the Website derives assessment truth or executive intelligence
+- the Website consumes anything other than approved Website Projection Delivery
+  Contracts
+- the Platform repository introduces runtime behavior or production code
+- producer and consumer isolation is weakened
+- versioned contract boundaries are bypassed
 - immutable evidence is modified or obscured
 - deterministic behavior is replaced with unsupported interpretation
-- end-to-end lineage is broken or incomplete
-- fail-closed validation is weakened or bypassed
-- explainability is weakened or removed
-- human decision authority is missing or bypassed
-- release scope exceeds the approved bounded responsibility
-- release labeling implies readiness beyond approved scope
-- release evidence relies on unsupported interpretation, assumptions, inferred
-  implementation behavior, or undocumented operational state
-- production runtime application code is introduced into `nguyen-ai-platform`
+- lineage is broken
+- fail-closed validation is weakened
+- explainability is weakened
+- human decision authority is bypassed
+- required governance reviews are incomplete
+- architecture conformance is not established
+- release evidence is unsupported or insufficient
+- approved baselines are redefined without approval
 
-When a release governance stop condition is present, release approval must be
-withheld until the condition is resolved through an approved bounded
-responsibility consistent with approved architecture and governance.
+Any stop condition requires governance resolution before progression.
 
-## 12. Release Governance Document Ownership
+## 19. Success Criteria
 
-`nguyen-ai-platform` owns Release Governance Baseline v1.
+Release Governance Baseline v1 is successful when it:
 
-The document owner is responsible for preserving consistency with approved
-architecture baselines, Platform Governance Baseline v1, Repository Governance
-Baseline v1, Contract Governance Baseline v1, and Architecture Conformance
-Baseline v1.
-
-Release Governance Baseline v1 must not be owned, modified, or superseded by
-implementation repositories.
-
-Document ownership does not authorize architecture changes, repository
-ownership changes, contract implementation, deployment procedures, operational
-procedures, runtime deployment, automation tooling, release scripts, build
-systems, or production implementation.
-
-## 13. Release Governance Lifecycle
-
-Release governance adoption:
-
-Release Governance Baseline v1 becomes the canonical release governance policy
-after architecture review confirms consistency with approved architecture and
-governance baselines.
-
-Release governance use:
-
-Release governance policy is used to evaluate release readiness and release
-approval against approved architecture, approved governance, approved
-conformance evidence, and explicit human approval.
-
-Release governance review:
-
-Release governance policy must be reviewed against approved architecture and
-governance before it is used as an authoritative release governance baseline.
-
-Release governance revision:
-
-Release governance revisions must be bounded, policy-level, and justified by an
-approved governance need or approved architectural change.
-
-Release governance supersession:
-
-A future Release Governance Baseline may supersede this document only after
-approved governance review. Supersession must not redefine architecture,
-repository ownership, contract boundaries, architecture conformance, deployment
-procedure, runtime behavior, or production implementation.
-
-Release governance retirement:
-
-Release governance documents may be retired only when superseded by an approved
-governance document or when the governed scope is no longer valid under
-approved architecture.
-
-This lifecycle defines governance policy only. It does not introduce
-implementation guidance, deployment procedure, operational procedure, runtime
-deployment, release scripts, build systems, automation tooling, or
-architectural changes.
+- establishes the canonical Release Governance Baseline v1
+- preserves Platform Governance Baseline v1
+- preserves Platform Architecture Baseline v1
+- preserves Repository Ownership Baseline v1
+- preserves Platform Integration Baseline v1
+- preserves Cross-Repository Contract Governance Baseline v1
+- preserves Repository Governance Baseline v1
+- preserves Architecture Conformance Governance Baseline v1
+- governs governance release authority, prerequisites, approval, evidence,
+  coordination, records, and lifecycle only
+- defines one bounded governance responsibility only
+- contains no architecture redesign
+- contains no repository ownership changes
+- contains no implementation guidance
+- contains no production code
