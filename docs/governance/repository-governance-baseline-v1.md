@@ -1,266 +1,410 @@
 # Repository Governance Baseline v1
 
-## 1. Purpose and Scope
+## 1. Purpose
 
-Repository Governance is the policy framework that preserves approved
-repository ownership, architectural boundaries, and repository autonomy within
-the Nguyen AI Platform.
+Repository Governance Baseline v1 establishes the canonical governance policy
+for repository autonomy, repository ownership conformance, repository
+responsibility boundaries, repository interaction, repository governance
+lifecycle, governance reviews, and repository conformance across the Nguyen AI
+Platform.
 
-The purpose of repository governance is to ensure that each repository remains
-within its approved responsibility boundary and that cross-repository work does
-not move, duplicate, obscure, or bypass repository-owned responsibilities.
+This document governs repositories as repositories.
 
-The scope of repository governance includes policy for repository ownership
-protection, repository boundary preservation, cross-repository coordination,
-repository conformance, governance compliance, and repository governance review.
+This document does not govern:
 
-This document derives authority from:
+- cross-repository contracts
+- platform architecture
+- implementation
+- runtime behavior
 
-- `docs/governance/platform-governance-baseline-v1.md`
-- `docs/platform/repository-ownership-v1.md`
+Those responsibilities belong to existing approved baselines.
 
-This document does not supersede the Platform Governance Baseline v1 or the
-Repository Ownership Baseline v1. If there is a conflict, those baselines remain
-authoritative.
+This document is governance only. It does not define APIs, schemas,
+algorithms, runtime behavior, production code, deployment, infrastructure,
+testing guidance, release procedures, security implementation, validation
+implementation, transport protocols, serialization, or implementation
+mechanics.
 
-This document defines governance policy only. It does not define architecture,
-repository responsibilities, implementation, deployment, infrastructure,
-security architecture, contract schemas, APIs, algorithms, transport
-definitions, validation implementation, testing guidance, release procedures,
-ADRs, roadmaps, or production behavior.
+## 2. Scope
 
-## 2. Governance Authority
+Repository governance applies to the approved repositories in the Nguyen AI
+Platform ecosystem:
 
-`nguyen-ai-platform` is the governing authority for repository governance across
-the Nguyen AI Platform ecosystem.
+- `nguyen-ai-platform`
+- `nguyen-ai-assessment-service`
+- `executive-intelligence-platform`
+- `nguyen-ai-website`
 
-The platform repository owns repository governance policy, repository ownership
-review, repository conformance expectations, and governance compliance review.
-It does not own runtime application behavior in implementation repositories.
+In scope:
 
-Repository autonomy is preserved within approved architectural boundaries. Each
-repository may make decisions within its approved responsibility boundary, but
-repository autonomy does not authorize ownership violations, responsibility
-migration, duplicated responsibility, or bypass of approved contracts.
+- repository autonomy governance
+- repository ownership conformance
+- repository responsibility boundary governance
+- repository interaction policy
+- repository governance lifecycle policy
+- repository governance review requirements
+- repository governance conformance requirements
+- repository governance stop conditions
 
-Human decision authority is required for repository governance approval,
-ownership interpretation, conformance decisions, and supersession of repository
-governance documents.
+Out of scope:
 
-Repository governance authority is bounded by the approved architecture.
-Repository governance may protect, interpret, and review approved ownership
-boundaries, but it must not redefine architecture, redefine repository
-ownership, move responsibilities, or introduce new repository responsibilities.
+- cross-repository contract governance
+- platform architecture definition
+- repository ownership redefinition
+- implementation guidance
+- runtime behavior
+- production code
+- deployment
+- infrastructure
+- testing guidance
+- release procedures
+- security implementation
+- validation implementation
+- APIs
+- schemas
+- algorithms
+- transport protocols
+- serialization
 
-## 3. Repository Governance Principles
+## 3. Governance Authority
 
-Repository governance is governed by these policy principles:
+The `nguyen-ai-platform` repository is the governing authority for Repository
+Governance Baseline v1.
 
-- Approved repository ownership must be preserved.
-- Repository autonomy must be preserved within approved architectural
-  boundaries.
-- Producer and consumer isolation must be preserved.
-- Immutable evidence must be preserved.
-- Deterministic behavior must be preserved.
-- End-to-end lineage must be preserved.
-- Fail-closed validation must be preserved.
-- Versioned contract boundaries must be preserved.
-- Explainability must be preserved.
-- Human decision authority must be preserved.
-- Repositories must not assume another repository's owned responsibility.
-- Governance must not replace evidence-backed outputs with unsupported
-  interpretation.
+This authority is limited to governance policy for repository autonomy,
+repository ownership conformance, repository responsibility boundaries,
+repository interaction rules, repository governance reviews, and repository
+conformance.
 
-## 4. Repository Governance Responsibilities
+Repository governance derives from the approved architecture and governance
+baselines. It does not supersede or redefine those baselines.
 
-Repository governance is responsible for repository ownership protection.
+Human decision authority is required for approval, revision, supersession, or
+retirement of repository governance policy.
 
-Repository ownership protection ensures that proposed and completed work remains
-within the ownership boundaries defined by the Repository Ownership Baseline v1.
+Repository governance authority must not move responsibilities between
+repositories, duplicate responsibilities, create new repository
+responsibilities, or authorize implementation outside approved repository
+ownership.
 
-Repository governance is responsible for repository boundary preservation.
+## 4. Repository Governance Philosophy
 
-Repository boundary preservation ensures that no repository performs,
-duplicates, obscures, or bypasses another repository's approved responsibility.
+Repository governance is based on the following governing philosophy:
 
-Repository governance is responsible for cross-repository coordination.
+- Architecture assigns responsibilities.
+- Repository ownership assigns accountability.
+- Contracts govern communication.
+- Repositories govern implementation within approved ownership boundaries.
+- Governance preserves these boundaries over time.
 
-Cross-repository coordination ensures that repositories interact only through
-approved architectural boundaries and versioned contracts, while preserving
-producer and consumer isolation.
+Repository governance protects the relationship between approved architecture,
+approved repository ownership, governed contract boundaries, and repository
+autonomy. It does not replace architecture, contract governance, or
+implementation repository authority.
 
-Repository governance is responsible for repository conformance.
+## 5. Relationship to Existing Approved Baselines
 
-Repository conformance ensures that each repository remains compliant with the
-Platform Governance Baseline v1, Repository Ownership Baseline v1, and approved
-Phase I architectural baselines.
+This document derives from the approved Phase I Platform Architecture
+Foundation and the approved Phase II governance baselines.
 
-Repository governance is responsible for governance compliance.
+Approved Phase I baselines:
 
-Governance compliance ensures that ownership review, boundary review,
-conformance review, and stop-condition enforcement are applied before
-progression.
+- Platform Repository Foundation v1.
+- Platform Architecture Baseline v1.
+- Repository Ownership Baseline v1.
+- Platform Integration Baseline v1.
+- System Context Baseline v1.
+- Foundation Baseline Review v1.
 
-This section defines governance responsibilities only. It does not redefine
-repository responsibilities.
+Approved Phase II baselines:
 
-## 5. Repository Governance Boundaries
+- Platform Governance Baseline v1.
+- Cross-Repository Contract Governance Baseline v1.
 
-Repository governance prohibits responsibility migration.
+Repository Governance Baseline v1 must remain consistent with:
 
-Responsibilities must not move between repositories unless approved through
-architecture governance and reflected in an approved architectural baseline.
+- Platform Governance Baseline v1.
+- Cross-Repository Contract Governance Baseline v1.
+- Repository Ownership Baseline v1.
+- Platform Architecture Baseline v1.
+- Platform Integration Baseline v1.
 
-Repository governance prohibits ownership duplication.
+This document does not supersede, redefine, or modify any approved baseline. If
+there is a conflict between this document and an approved architecture or
+governance baseline, the approved baseline remains authoritative until changed
+through approved governance.
 
-A repository must not duplicate business logic, derivation responsibility,
-assessment responsibility, presentation responsibility, or governance
-responsibility owned by another repository.
+## 6. Repository Governance Principles
 
-Repository governance prohibits architectural responsibility overlap.
+Repository governance preserves the following principles:
 
-Repository responsibilities must remain distinct, explicit, and traceable to the
-approved Repository Ownership Baseline v1.
+- Repository ownership is immutable unless changed through approved
+  architecture governance.
+- Repository autonomy exists only within approved architectural boundaries.
+- Each repository remains accountable for its approved responsibility only.
+- Producer and consumer isolation is preserved.
+- Repository boundaries shall not blur through implementation convenience.
+- Repository interaction shall preserve versioned contract boundaries.
+- Immutable evidence is preserved.
+- Deterministic behavior is preserved.
+- End-to-end lineage is preserved.
+- Fail-closed validation is preserved.
+- Explainability is preserved.
+- Human decision authority is preserved.
+- Repository governance shall not redefine architecture.
+- Repository governance shall not redefine repository ownership.
+- Repository governance shall not redefine cross-repository contract
+  governance.
 
-Repository governance prohibits unauthorized artifact production.
+## 7. Repository Identity
 
-A repository must not produce artifacts assigned to another repository by the
-approved architectural baselines.
+Every approved repository possesses a stable architectural identity.
 
-Repository governance prohibits unauthorized artifact consumption.
+Repository identity is independent of implementation details, runtime behavior,
+deployment environment, infrastructure, code organization, internal modules, or
+operational state.
 
-A repository must not consume artifacts outside approved architectural
-boundaries or bypass approved producer and consumer relationships.
+Repository identity changes only through approved architectural governance.
 
-Repository governance references approved architectural baselines only. It does
-not define new architecture or new repository responsibilities.
+Repository identity must remain traceable to the approved Platform Architecture
+Baseline v1 and Repository Ownership Baseline v1.
 
-## 6. Repository Conformance Requirements
+## 8. Repository Autonomy
 
-Every repository must satisfy these requirements to remain repository
-governance compliant:
+Each repository may evolve only within its approved ownership boundary.
 
-- remain within approved ownership boundaries
-- preserve producer and consumer isolation
-- preserve versioned contract boundaries
-- preserve deterministic behavior
-- preserve immutable evidence
-- preserve explainability
-- preserve end-to-end lineage
-- preserve fail-closed validation
-- preserve human decision authority
-- avoid duplicating another repository's responsibilities
-- avoid producing artifacts owned by another repository
-- avoid consuming artifacts outside approved architectural boundaries
-- preserve approved ownership exclusions
-- remain consistent with Platform Governance Baseline v1
-- remain consistent with Repository Ownership Baseline v1
-- remain consistent with approved Phase I architectural baselines
+Repository autonomy shall never be interpreted as architectural independence.
+Repository evolution remains subordinate to approved architecture and
+governance baselines.
 
-Repository conformance applies to proposed work, active work, completed work,
-and release readiness review.
+Repository autonomy permits repositories to govern their owned implementation
+responsibilities within approved boundaries. Repository autonomy does not
+authorize architecture changes, ownership changes, contract governance changes,
+or runtime behavior outside approved ownership.
 
-## 7. Repository Governance Reviews
+Repository autonomy prohibits:
 
-### Ownership Assignment Review
+- ownership migration
+- responsibility migration
+- business logic duplication
+- unauthorized artifact production
+- unauthorized artifact consumption
+- contract boundary bypass
+- runtime behavior in the Platform repository
 
-Ownership Assignment Review confirms that proposed work is assigned to the
-repository that owns the relevant responsibility under the Repository Ownership
-Baseline v1.
+## 9. Repository Authority
 
-### Ownership Exclusions Review
+Each repository possesses authority only within its approved ownership
+boundary.
 
-Ownership Exclusions Review confirms that proposed work does not violate any
-explicit ownership exclusion defined by approved architectural baselines.
+Repository authority cannot expand through implementation.
 
-### Repository Boundaries Review
+Repository authority cannot be inferred from convenience, dependency pressure,
+presentation needs, downstream demand, operational preference, or repository
+proximity.
 
-Repository Boundaries Review confirms that proposed work preserves each
-repository's approved boundary and does not create responsibility overlap.
+Repository authority changes only through approved architecture governance.
 
-### Cross-Repository Responsibility Drift Review
+Repository authority must remain consistent with approved ownership,
+approved exclusions, approved producer and consumer boundaries, and governed
+contract boundaries.
 
-Cross-Repository Responsibility Drift Review confirms that responsibility does
-not migrate through convenience, dependency pressure, presentation needs, or
-downstream demand.
+## 10. Repository Responsibilities
 
-### Architecture Conformance Review
+Repository Governance Baseline v1 references approved repository
+responsibilities but does not redefine them.
 
-Architecture Conformance Review confirms that completed work remains aligned
-with approved architecture, repository ownership, and integration boundaries.
+`nguyen-ai-platform` is the architectural and governance control plane for the
+Nguyen AI Platform. It owns architecture and governance only.
 
-### Platform Governance Conformance Review
+`nguyen-ai-assessment-service` is the sole producer of assessment truth.
 
-Platform Governance Conformance Review confirms that repository governance
-decisions remain consistent with Platform Governance Baseline v1.
+`executive-intelligence-platform` is the sole producer of executive
+intelligence.
 
-## 8. Repository Governance Stop Conditions
+`nguyen-ai-website` is the presentation-only consumer of Website Projection
+Delivery Contracts.
 
-Repository governance shall prohibit progression when any of the following
-conditions are present:
+The authoritative repository responsibility definitions remain in the approved
+Platform Architecture Baseline v1 and Repository Ownership Baseline v1.
 
-- repository ownership is violated
-- responsibilities migrate without approved architectural change
-- business logic is duplicated
-- `nguyen-ai-assessment-service` derives executive intelligence
-- `executive-intelligence-platform` modifies assessment truth
-- `nguyen-ai-website` derives assessment truth
-- `nguyen-ai-website` derives executive intelligence
-- `nguyen-ai-platform` introduces production runtime behavior
-- Platform Governance Baseline v1 is violated
-- Repository Ownership Baseline v1 is violated
-- approved Phase I architectural baselines are violated
-- producer and consumer isolation is weakened
-- immutable evidence is modified or obscured
-- deterministic behavior is replaced with unsupported interpretation
-- end-to-end lineage is broken
-- fail-closed validation is weakened or bypassed
-- versioned contract boundaries are bypassed or removed
-- explainability is weakened or removed
-- human decision authority is bypassed
+## 11. Repository Ownership Conformance
 
-When a repository governance stop condition is present, progression must stop
-until the condition is resolved through an approved bounded responsibility that
-preserves approved architecture and repository ownership.
+Repository ownership conformance requires:
 
-## 9. Repository Governance Lifecycle
+- preservation of approved ownership
+- preservation of ownership exclusions
+- preservation of producer and consumer boundaries
+- preservation of approved artifact ownership
+- no duplicated responsibility
+- no migrated responsibility
+- no hidden expansion of repository authority
+- no assumption of another repository's responsibility
+
+Repository ownership conformance applies to repository-level governance
+decisions. It does not authorize implementation work or redefine repository
+responsibility.
+
+## 12. Repository Interaction Rules
+
+Repository interaction must preserve approved architecture, approved ownership,
+and governed contract boundaries.
+
+Repository interaction rules require:
+
+- interaction only through approved governed contract boundaries
+- no ownership violations
+- no downstream reinterpretation of producer-owned meaning
+- no bypass of approved producer and consumer flow
+- no hidden dependencies
+- no implicit ownership transfer
+- no undocumented communication paths
+- fail-closed behavior whenever interaction validity cannot be established
+
+Repository interaction policy does not govern cross-repository contracts
+themselves. Cross-repository contract governance remains governed by
+Cross-Repository Contract Governance Baseline v1.
+
+## 13. Repository Boundary Preservation
+
+Repository governance preserves the approved repository boundaries of the
+Nguyen AI Platform.
+
+The Assessment Service is the sole producer of assessment truth.
+
+The Executive Intelligence Platform is the sole producer of executive
+intelligence.
+
+The Website consumes Website Projection Delivery Contracts only.
+
+The Platform repository owns architecture and governance only.
+
+Repository boundaries must not be weakened, bypassed, duplicated, or blurred by
+implementation convenience, repository autonomy, interaction needs, downstream
+demand, or contract consumption.
+
+## 14. Repository Governance Lifecycle
+
+Repository governance lifecycle defines policy only for the lifecycle of
+repository governance authority.
 
 Governance adoption:
 
 Repository Governance Baseline v1 becomes the canonical repository governance
-baseline after architecture review confirms consistency with Platform
-Governance Baseline v1, Repository Ownership Baseline v1, and approved Phase I
-architectural baselines.
-
-Governance conformance:
-
-Repository governance documents must remain consistent with the Platform
-Governance Baseline v1 and Repository Ownership Baseline v1.
+baseline after approval under the governing platform process.
 
 Governance review:
 
-Repository governance documents must be reviewed for consistency with approved
-architecture, repository ownership, governance principles, governance stop
-conditions, and repository conformance requirements.
+Repository governance must be reviewed against approved architecture,
+approved repository ownership, Platform Governance Baseline v1, and
+Cross-Repository Contract Governance Baseline v1 where repository interaction
+depends on governed contracts.
+
+Governance conformance:
+
+Repository governance remains conformant only while it preserves approved
+repository ownership, approved responsibility boundaries, approved exclusions,
+producer and consumer isolation, and human decision authority.
 
 Governance revision:
 
-Repository governance revisions must be bounded, policy-level, and justified by
-an approved governance need or approved architectural change.
+Repository governance revisions must remain bounded, policy-level, and
+consistent with approved architecture and governance baselines.
 
 Governance supersession:
 
-A future Repository Governance Baseline may supersede this document only after
-approved governance review. Supersession must not redefine architecture or
-repository ownership unless a future approved architectural baseline explicitly
-does so.
+A future Repository Governance Baseline may supersede this document only
+through approved governance. Supersession must not redefine architecture,
+repository ownership, contract governance, implementation, or runtime behavior.
 
 Governance retirement:
 
-Repository governance documents may be retired only when superseded by an
-approved governance document or when the governed scope is no longer valid
-under approved architecture.
+Repository governance may be retired only when superseded by an approved
+governance baseline or when its governed scope is no longer valid under
+approved architecture.
 
-This lifecycle defines governance policy only. It does not introduce
-implementation guidance, release procedures, production behavior, or
-architectural changes.
+This lifecycle does not define implementation workflow, release workflow,
+runtime behavior, or operational processes.
+
+## 15. Governance Review Requirements
+
+Repository governance requires review of:
+
+- repository ownership compliance
+- repository autonomy
+- responsibility boundaries
+- ownership exclusions
+- producer and consumer isolation
+- repository interaction conformance
+- Platform Governance alignment
+- Cross-Repository Contract Governance alignment where applicable
+
+Repository governance review must confirm that proposed or completed
+repository-level governance activity remains within the approved repository
+ownership model.
+
+Repository governance review must not redefine architecture, redefine
+ownership, define implementation guidance, or define contract governance.
+
+## 16. Governance Conformance Requirements
+
+Every repository must preserve:
+
+- approved ownership
+- approved exclusions
+- repository autonomy within approved architectural boundaries
+- producer and consumer isolation
+- immutable evidence
+- deterministic behavior
+- end-to-end lineage
+- fail-closed validation
+- versioned contract boundaries
+- explainability
+- human decision authority
+
+Repository governance conformance must be based on approved architecture and
+governance evidence only. Unsupported interpretation, assumptions, inferred
+implementation behavior, or undocumented operational state must not be used to
+establish repository governance conformance.
+
+## 17. Stop Conditions
+
+Repository governance prohibits progression whenever:
+
+- repository ownership is violated
+- responsibilities migrate without approved architecture governance
+- business logic is duplicated
+- assessment truth is produced or modified outside the Assessment Service
+- executive intelligence is generated outside the Executive Intelligence
+  Platform
+- the Website derives assessment truth or executive intelligence
+- the Website consumes anything other than approved Website Projection
+  Delivery Contracts
+- the Platform repository introduces runtime behavior or production code
+- producer and consumer isolation is weakened
+- versioned contract boundaries are bypassed
+- hidden repository dependencies are introduced
+- lineage is broken
+- fail-closed behavior is weakened
+- human decision authority is bypassed
+- approved architecture or governance baselines are redefined without approval
+
+Any stop condition requires governance resolution before progression.
+
+## 18. Success Criteria
+
+Repository Governance Baseline v1 is successful when it:
+
+- establishes the canonical Repository Governance Baseline v1
+- preserves Platform Governance Baseline v1
+- preserves Cross-Repository Contract Governance Baseline v1
+- preserves Repository Ownership Baseline v1
+- preserves Platform Architecture Baseline v1
+- preserves Platform Integration Baseline v1
+- preserves immutable repository responsibilities
+- defines one bounded governance responsibility only
+- governs repository autonomy and repository conformance only
+- introduces no architectural changes
+- introduces no repository ownership changes
+- contains no implementation guidance
+- contains no production code
